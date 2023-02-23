@@ -1,0 +1,55 @@
+<!-- <div class="container">
+  <div class="item">
+    <qrcode
+      [qrdata]="qrCodes[0].credencial"
+      [allowEmptyString]="false"
+      [errorCorrectionLevel]="'M'"
+      [margin]="0"
+      [width]="200"
+    >
+    </qrcode>
+    <h2>{{ qrCodes[0].credencial }}</h2>
+  </div>
+</div> -->
+<ng-container *ngFor="let code of qrCodes; let i = index">
+
+    <tr>
+      <th></th>
+    </tr>
+    <tr>
+      <td >
+        <qrcode
+          [qrdata]="code.credencial"
+          [allowEmptyString]="false"
+          [errorCorrectionLevel]="'M'"
+          [margin]="2"
+          [width]="100"
+        >
+        </qrcode>
+
+
+        <h2>{{ code.credencial }}</h2>
+      </td>
+    </tr>
+
+
+
+</ng-container>
+
+<router-outlet></router-outlet>
+
+<!-- <p-dataView #dv [value]="qrCodes" [paginator]="true" [rows]="10" layout="grid">
+  <ng-template pTemplate="body" let-qrcode>
+    <div class="col-12">
+      <qrcode
+        [qrdata]="qrcode.credencial"
+        [allowEmptyString]="false"
+        [errorCorrectionLevel]="'M'"
+        [margin]="0"
+        [width]="200"
+      >
+      </qrcode>
+      <h2>{{ qrcode.credencial }}</h2>
+    </div>
+  </ng-template>
+</p-dataView> -->
